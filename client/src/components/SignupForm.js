@@ -33,14 +33,10 @@ const SignupForm = () => {
         variables: { ...userFormData },
       });
 
-      if (error) {
-        console.log(error);
-        setShowAlert(true);
-      }
-
       Auth.login(data.addUser.token);
     } catch(err) {
       console.error(err);
+      setShowAlert(true);
     }
 
     setUserFormData({
